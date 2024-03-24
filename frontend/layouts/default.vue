@@ -5,7 +5,7 @@
 
   const collapsed = ref<boolean>(false)
 
-  const projectName = ref('Clickadilla Frontend')
+  const projectName = ref('Frontend Tasks')
 </script>
 <template>
   <div class="h-screen flex">
@@ -31,15 +31,15 @@
         <a-menu theme="dark">
           <a-menu-item key="1">
             <user-outlined />
-            <span>nav 1</span>
+            <span>Трекинг</span>
           </a-menu-item>
           <a-menu-item key="2">
             <video-camera-outlined />
-            <span>nav 2</span>
+            <span>Запросы</span>
           </a-menu-item>
           <a-menu-item key="3">
             <upload-outlined />
-            <span>nav 3</span>
+            <span>Статистика</span>
           </a-menu-item>
         </a-menu>
       </a-layout-sider>

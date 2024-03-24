@@ -1,11 +1,12 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { watch } from 'vue'
   import type { KanbanColumn } from '~/services/models'
   import { nanoid } from 'nanoid'
   import dayjs from 'dayjs'
   import KanbanBoard from '~/components/KanbanBoard.vue'
+  import { useLocalStorage } from '@vueuse/core'
 
-  const columns = ref<KanbanColumn[]>([
+  const columns = useLocalStorage<KanbanColumn[]>('trelloBoard', [
     {
       title: 'Backlog',
       id: nanoid(),
@@ -61,8 +62,17 @@
     }
   ])
 
+  watch(
+    columns,
+    () => {
+      //axios request
+    },
+    {
+      deep: true
+    }
+  )
+
   const updateColums = (newData: KanbanColumn[]) => {
-    console.log('new data: ', newData)
     columns.value = newData
   }
 </script>
